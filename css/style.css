@@ -48,13 +48,13 @@ img.catPic {
   font-size: 0;
   text-indent: -9999px;
   background-color: #595959;
-  -webkit-backface-visibility:hidden;
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
 
 .no-flick {
-  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility:hidden;
 }
 
 .home {
