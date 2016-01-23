@@ -64,8 +64,8 @@ img.catPic {
 }
 
 .github {
-  background: url("github2.svg");
-  background-image: url("github2.svg"), none;
+  background: url("github2.png");
+  background-image: url("github2.png"), none;
   background-size: 100%;
   background-position: 0 0;
 }
@@ -75,8 +75,8 @@ img.catPic {
 }
 
 .linkedin {
-  background: url("linkedin2.svg");
-  background-image: url("linkedin2.svg"), none;
+  background: url("linkedin2.png");
+  background-image: url("linkedin2.png"), none;
   background-size: 100%;
   background-position: 0 0;
 }
