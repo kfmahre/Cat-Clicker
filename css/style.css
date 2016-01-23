@@ -49,8 +49,11 @@ img.catPic {
   text-indent: -9999px;
   background-color: #595959;
   -webkit-transition: background 0.2s;
-  -webkit-backface-visibility: hidden;
   transition: background 0.2s;
+}
+
+.no-flick {
+  -webkit-transform:translate3d(0,0,0);
 }
 
 .home {
@@ -58,7 +61,6 @@ img.catPic {
   background-image: url("home2.png"), none;
   background-size: 100%;
   background-position: 0 0;
-  -webkit-backface-visibility: hidden;
 }
 
 .home:hover {
@@ -70,7 +72,6 @@ img.catPic {
   background-image: url("github2.png"), none;
   background-size: 100%;
   background-position: 0 0;
-  -webkit-backface-visibility: hidden;
 }
 
 .github:hover {
@@ -82,7 +83,6 @@ img.catPic {
   background-image: url("linkedin2.png"), none;
   background-size: 100%;
   background-position: 0 0;
-  -webkit-backface-visibility: hidden;
 }
 
 .linkedin:hover {
