@@ -61,6 +61,7 @@ img.catPic {
 }
 
 .home:hover {
+  -webkit-backface-visibility: hidden;
   background-position: 0 -60px;
 }
 
@@ -72,6 +73,7 @@ img.catPic {
 }
 
 .github:hover {
+  -webkit-backface-visibility: hidden;
   background-position: 0 -60px;
 }
 
@@ -83,6 +85,7 @@ img.catPic {
 }
 
 .linkedin:hover {
+  -webkit-backface-visibility: hidden;
   background-position: 0 -60px;
 }
 
