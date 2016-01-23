@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #a6a6a6;
+  margin: 0;
+}
+
+.wrapper {
+  margin: 5px 20% 0 20%;
+}
+
+img.catPic {
+  width: 100%;
+  border: 2px solid #737373;
+}
+
+#click-count {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.links {
+  font-size: 14px;
+}
+
+.buttons {
+    float: left;
+    margin-left: calc((100% - 210px) / 2);
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 5px 5px 0px 5px;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  text-indent: -9999px;
+  background-color: #595959;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.home {
+  background: url("home2.svg");
+  background-image: url("home2.svg"), none;
+  background-size: 100%;
+  background-position: 0 0;
+}
+
+.home:hover {
+  background-position: 0 -60px;
+}
+
+.github {
+  background: url("github2.svg");
+  background-image: url("github2.svg"), none;
+  background-size: 100%;
+  background-position: 0 0;
+}
+
+.github:hover {
+  background-position: 0 -60px;
+}
+
+.linkedin {
+  background: url("linkedin2.svg");
+  background-image: url("linkedin2.svg"), none;
+  background-size: 100%;
+  background-position: 0 0;
+}
+
+.linkedin:hover {
+  background-position: 0 -60px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*
+a {
+  color: #00bfff;
+}
+
+a:hover {
+  color: #75ff47;
+}
+
+a:active {
+  color: #ff4719;
+}
+*/
+
+footer {
+  font-weight: 300;
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 380px) {
+  .title-super {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 381px) {
+  .title-super {
+    font-size: 48px;
+  }
+}

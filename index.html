@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.css"rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/jQuery.js"></script>
+
+</head>
+
+<body class="container-fluid">
+
+	<header class="row">
+		<div class="buttons">
+			<a href="http://kfmahre.github.io/" class="icon home">home</a>
+			<a href="https://github.com/kfmahre" class="icon github">github</a>
+			<a href="https://www.linkedin.com/in/kfmahre" class="icon linkedin">linkedin</a>
+		</div>
+	</header>
+
+	<div class="row">
+		<div class="wrapper">
+			<img class="catPic" src="catpic.jpg" id="cat-picture" alt="Cat Picture">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="text-center" >
+			<form>
+				<output type="text" id="click-count"></output>
+			</form>
+		</div>
+	</div>
+
+<script>
+var $clickElem = $('#click-count');
+$clickElem.text("Click on the cat!");
+var clickCount = [];
+var storage = [];
+$('#cat-picture').click(function(e) {
+	clickCount = clickCount++;
+	storage.push(clickCount++);
+	//count = clickCount;
+	//console.log(clickCount);
+	//console.log(count);
+	//if (document.getElementById('click-count').length == 0) {
+	$clickElem.text("You've clicked the cat "+clickCount+" time(s).");
+	//};
+});
+
+</script>
+
+
+</body>
+
+</html>
