@@ -53,8 +53,8 @@ img.catPic {
 }
 
 .home {
-  background: url("home2.svg");
-  background-image: url("home2.svg"), none;
+  background: url("home2.png");
+  background-image: url("home2.png"), none;
   background-size: 100%;
   background-position: 0 0;
 }
