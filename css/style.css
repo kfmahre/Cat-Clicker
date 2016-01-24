@@ -43,51 +43,49 @@ img.catPic {
   vertical-align: top;
   overflow: hidden;
   margin: 5px 5px 0px 5px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   font-size: 0;
   text-indent: -9999px;
   background-color: #595959;
+  z-index: 0;
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
 
-.no-flick {
-  -webkit-transform: translate3d(0,0,0);
-  -webkit-backface-visibility:hidden;
-}
-
 .home {
   background: url("home2.png");
-  background-image: url("home2.png"), none;
+  background-image: url("home2.png");
   background-size: 100%;
   background-position: 0 0;
 }
 
 .home:hover {
-  background-position: 0 -60px;
+  background-position: 0 -50px;
 }
 
 .github {
   background: url("github2.png");
-  background-image: url("github2.png"), none;
+  background-image: url("github2.png");
   background-size: 100%;
   background-position: 0 0;
+  z-index: inherit;
 }
 
 .github:hover {
-  background-position: 0 -60px;
+  background-position: 0 -50px;
 }
 
 .linkedin {
   background: url("linkedin2.png");
-  background-image: url("linkedin2.png"), none;
+  background-image: url("linkedin2.png");
   background-size: 100%;
   background-position: 0 0;
+  z-index: inherit;
 }
 
 .linkedin:hover {
-  background-position: 0 -60px;
+  background-position: 0 -50px;
 }
 
 ul {
