@@ -6,10 +6,10 @@
 <link href="css/bootstrap.css"rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <script src="js/jQuery.js"></script>
-
+<title>Cat-Clicker web-app</title>
 </head>
 
-<body class="container-fluid">
+<body class="main">
 
 	<header class="row">
 		<div class="buttons">
@@ -19,34 +19,73 @@
 		</div>
 	</header>
 
+	<hr>
+
 	<div class="row">
-		<div class="wrapper">
-			<img class="catPic" src="catpic.jpg" id="cat-picture" alt="Cat Picture">
+		<div class="allcats clearfix">
+			<div class="cat-box">
+				<p class="cat-name text-center">Baskets</p>
+				<img class="catPic img-responsive img-circle" src="catpic.jpg" id="baskets-picture" alt="Cat Picture">
+				<form class="text-center">
+					<output class="click-output" type="text" id="baskets-count"></output>
+				</form>
+			</div>
+			<div class="cat-box">
+				<p class="cat-name text-center">Pickles</p>
+				<img class="catPic img-responsive img-circle" src="catpic2.jpg" id="pickles-picture" alt="Cat Picture">
+				<form class="text-center">
+					<output class="click-output" type="text" id="pickles-count"></output>
+				</form>
+			</div>
 		</div>
 	</div>
 
+	<hr>
+
 	<div class="row">
-		<div class="text-center" >
-			<form>
-				<output type="text" id="click-count"></output>
+		<div  >
+			<form class="text-center">
+				<output class="click-output" type="text" id="click-count"></output>
 			</form>
 		</div>
 	</div>
 
 <script>
+
 var $clickElem = $('#click-count');
-$clickElem.text("Click on the cat!");
+$clickElem.text("");
+
+var $basketsElem = $('#baskets-count');
+$basketsElem.text("Click on Baskets!");
+
+var $picklesElem = $('#pickles-count');
+$picklesElem.text("Click on Pickles!");
+
 var clickCount = [];
 var storage = [];
-$('#cat-picture').click(function(e) {
+
+var basketsCount = [];
+var basketsStorage = [];
+
+var picklesCount = [];
+var picklesStorage = [];
+
+$('.catPic').click(function(e) {
 	clickCount = clickCount++;
 	storage.push(clickCount++);
-	//count = clickCount;
-	//console.log(clickCount);
-	//console.log(count);
-	//if (document.getElementById('click-count').length == 0) {
-	$clickElem.text("You've clicked the cat "+clickCount+" time(s).");
-	//};
+	$clickElem.text("You've clicked a cat "+clickCount+" time(s).");
+});
+
+$('#baskets-picture').click(function(e) {
+	basketsCount = basketsCount++;
+	basketsStorage.push(basketsCount++);
+	$basketsElem.text("Clicked: "+basketsCount+" time(s).");
+});
+
+$('#pickles-picture').click(function(e) {
+	picklesCount = picklesCount++;
+	picklesStorage.push(picklesCount++);
+	$picklesElem.text("Clicked: "+picklesCount+" time(s).");
 });
 
 </script>

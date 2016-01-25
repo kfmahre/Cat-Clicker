@@ -11,31 +11,59 @@ html {
 }
 
 body {
+  width: 100%;
   background-color: #a6a6a6;
   margin: 0;
 }
 
-.wrapper {
-  margin: 5px 20% 0 20%;
+hr {
+  height: 1px;
+  /* margin: 5px 0px 5px 0px; */
+  color: #666666;
+  background-color: #666666;
+  border: none;
+}
+
+.allcats {
+  margin: 5px 0 0 0;
+}
+
+.cat-box {
+  float: left;
+  display: inline-block;
+  max-width: 50%;
+}
+
+.cat-name {
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
 }
 
 img.catPic {
-  width: 100%;
-  border: 2px solid #737373;
+  border: 3px solid #666666;
 }
 
-#click-count {
+img.catPic:hover {
+  border: 3px solid #808080;
+}
+
+img.catPic:active {
+  border: 3px solid #ffffff;
+}
+
+.click-output {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 18px;
 }
 
-.links {
-  font-size: 14px;
-}
+/*=============
+=  Icon links =
+=============*/
 
 .buttons {
     float: left;
-    margin-left: calc((100% - 210px) / 2);
+    margin-left: calc((100% - 180px) / 2);
 }
 
 .icon {
@@ -88,38 +116,54 @@ img.catPic {
   background-position: 0 -50px;
 }
 
-ul {
-  list-style-type: none;
-}
+/*====================
+= end of icon styles =
+====================*/
 
-/*
-a {
-  color: #00bfff;
-}
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
 
-a:hover {
-  color: #75ff47;
-}
+    /*==========  Mobile First Method  ==========*/
 
-a:active {
-  color: #ff4719;
-}
-*/
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width : 320px) {
 
-footer {
-  font-weight: 300;
-  text-align: center;
-  margin-top: 50px;
-}
+    }
 
-@media screen and (max-width: 380px) {
-  .title-super {
-    font-size: 36px;
-  }
-}
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width : 480px) {
 
-@media screen and (min-width: 381px) {
-  .title-super {
-    font-size: 48px;
-  }
-}
+    .allcats {
+      margin: 5px 0 0 0;
+    }
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+    .allcats {
+      margin: 5px 10% 0 10%;
+    }
+
+    .click-output {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    .allcats {
+      margin: 5px 10% 0 10%;
+    }
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
