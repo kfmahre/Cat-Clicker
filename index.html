@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/bootstrap.css"rel="stylesheet" type="text/css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script src="js/jQuery.js"></script>
 <title>Cat-Clicker web-app</title>
 </head>
 
@@ -22,21 +21,62 @@
 	<hr>
 
 	<div class="row">
+		<div class="dropdown cat-list">
+			<button type="button" class="btn btn-default btn-lg dropdown-toggle" id="catDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Select a Cat <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="catDropdown">
+				<li><a href="#" class="cat-sel text-center" id="baskets-sel">Baskets</a></li>
+				<li><a href="#" class="cat-sel text-center" id="pickles-sel">Pickles</a></li>
+				<li><a href="#" class="cat-sel text-center" id="sirLeo-sel">Sir Leo</a></li>
+				<li><a href="#" class="cat-sel text-center" id="bucketsJingles-sel">Buckets & Jingles</a></li>
+				<li><a href="#" class="cat-sel text-center" id="jarv-sel">Jarv</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="allcats clearfix">
-			<div class="cat-box">
+
+			<div class="cat-box baskets-display">
 				<p class="cat-name text-center">Baskets</p>
 				<img class="catPic img-responsive img-circle" src="catpic.jpg" id="baskets-picture" alt="Cat Picture">
 				<form class="text-center">
-					<output class="click-output" type="text" id="baskets-count"></output>
+					<output class="click-output" id="baskets-count"></output>
 				</form>
 			</div>
-			<div class="cat-box">
+
+			<div class="cat-box pickles-display">
 				<p class="cat-name text-center">Pickles</p>
 				<img class="catPic img-responsive img-circle" src="catpic2.jpg" id="pickles-picture" alt="Cat Picture">
 				<form class="text-center">
-					<output class="click-output" type="text" id="pickles-count"></output>
+					<output class="click-output" id="pickles-count"></output>
 				</form>
 			</div>
+
+			<div class="cat-box sirLeo-display">
+				<p class="cat-name text-center">Sir Leo</p>
+				<img class="catPic img-responsive img-circle" src="catpic3.jpg" id="sirLeo-picture" alt="Cat Picture">
+				<form class="text-center">
+					<output class="click-output" id="sirLeo-count"></output>
+				</form>
+			</div>
+
+			<div class="cat-box bucketsJingles-display">
+				<p class="cat-name text-center">Buckets & Jingles</p>
+				<img class="catPic img-responsive img-circle" src="catpic4.jpg" id="bucketsJingles-picture" alt="Cat Picture">
+				<form class="text-center">
+					<output class="click-output" id="bucketsJingles-count"></output>
+				</form>
+			</div>
+
+			<div class="cat-box jarv-display">
+				<p class="cat-name text-center">Jarv</p>
+				<img class="catPic img-responsive img-circle" src="catpic5.jpg" id="jarv-picture" alt="Cat Picture">
+				<form class="text-center">
+					<output class="click-output" id="jarv-count"></output>
+				</form>
+			</div>
+
 		</div>
 	</div>
 
@@ -45,10 +85,13 @@
 	<div class="row">
 		<div  >
 			<form class="text-center">
-				<output class="click-output" type="text" id="click-count"></output>
+				<output class="click-output" id="click-count"></output>
 			</form>
 		</div>
 	</div>
+
+<script src="js/jQuery.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
 
 <script>
 
@@ -61,6 +104,15 @@ $basketsElem.text("Click on Baskets!");
 var $picklesElem = $('#pickles-count');
 $picklesElem.text("Click on Pickles!");
 
+var $sirLeoElem = $('#sirLeo-count');
+$sirLeoElem.text("Click on Sir Leo!");
+
+var $bucketsJinglesElem = $('#bucketsJingles-count');
+$bucketsJinglesElem.text("Click on Buckets & Jingles!");
+
+var $jarvElem = $('#jarv-count');
+$jarvElem.text("Click on Jarv!");
+
 var clickCount = [];
 var storage = [];
 
@@ -69,6 +121,15 @@ var basketsStorage = [];
 
 var picklesCount = [];
 var picklesStorage = [];
+
+var sirLeoCount = [];
+var sirLeoStorage = [];
+
+var bucketsJinglesCount = [];
+var bucketsJinglesStorage = [];
+
+var jarvCount = [];
+var jarvStorage = [];
 
 $('.catPic').click(function(e) {
 	clickCount = clickCount++;
@@ -88,8 +149,73 @@ $('#pickles-picture').click(function(e) {
 	$picklesElem.text("Clicked: "+picklesCount+" time(s).");
 });
 
-</script>
+$('#sirLeo-picture').click(function(e) {
+	sirLeoCount = sirLeoCount++;
+	sirLeoStorage.push(sirLeoCount++);
+	$sirLeoElem.text("Clicked: "+sirLeoCount+" time(s).");
+});
 
+$('#bucketsJingles-picture').click(function(e) {
+	bucketsJinglesCount = bucketsJinglesCount++;
+	bucketsJinglesStorage.push(bucketsJinglesCount++);
+	$bucketsJinglesElem.text("Clicked: "+bucketsJinglesCount+" time(s).");
+});
+
+$('#jarv-picture').click(function(e) {
+	jarvCount = jarvCount++;
+	jarvStorage.push(jarvCount++);
+	$jarvElem.text("Clicked: "+jarvCount+" time(s).");
+});
+
+$(document).ready(function (){
+	$(".baskets-display").hide();
+	$(".pickles-display").hide();
+	$(".sirLeo-display").hide();
+	$(".bucketsJingles-display").hide();
+	$(".jarv-display").hide();
+});
+
+$('#baskets-sel').click(function(e){
+	$(".baskets-display").show();
+	$(".pickles-display").hide();
+	$(".sirLeo-display").hide();
+	$(".bucketsJingles-display").hide();
+	$(".jarv-display").hide();
+});
+
+$('#pickles-sel').click(function(e){
+	$(".baskets-display").hide();
+	$(".pickles-display").show();
+	$(".sirLeo-display").hide();
+	$(".bucketsJingles-display").hide();
+	$(".jarv-display").hide();
+});
+
+$('#sirLeo-sel').click(function(e){
+	$(".baskets-display").hide();
+	$(".pickles-display").hide();
+	$(".sirLeo-display").show();
+	$(".bucketsJingles-display").hide();
+	$(".jarv-display").hide();
+});
+
+$('#bucketsJingles-sel').click(function(e){
+	$(".baskets-display").hide();
+	$(".pickles-display").hide();
+	$(".sirLeo-display").hide();
+	$(".bucketsJingles-display").show();
+	$(".jarv-display").hide();
+});
+
+$('#jarv-sel').click(function(e){
+	$(".baskets-display").hide();
+	$(".pickles-display").hide();
+	$(".sirLeo-display").hide();
+	$(".bucketsJingles-display").hide();
+	$(".jarv-display").show();
+});
+
+</script>
 
 </body>
 

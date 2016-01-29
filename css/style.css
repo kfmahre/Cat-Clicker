@@ -26,12 +26,13 @@ hr {
 
 .allcats {
   margin: 5px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cat-box {
-  float: left;
-  display: inline-block;
-  max-width: 50%;
+  max-width: 70%;
 }
 
 .cat-name {
@@ -57,20 +58,32 @@ img.catPic:active {
   font-size: 18px;
 }
 
+.cat-list {
+    float: left;
+    margin-left: calc((100% - 178px) / 2);
+}
+
+.cat-sel {
+    margin: 5px 0 5px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 /*=============
 =  Icon links =
 =============*/
 
 .buttons {
     float: left;
-    margin-left: calc((100% - 180px) / 2);
+    margin-top: 5px;
+    margin-left: calc((100% - 175px) / 2);
 }
 
 .icon {
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
-  margin: 5px 5px 0px 5px;
+  margin: 0 5px 0 5px;
   width: 50px;
   height: 50px;
   font-size: 0;
@@ -159,6 +172,10 @@ img.catPic:active {
 
     .allcats {
       margin: 5px 10% 0 10%;
+    }
+
+    .cat-box {
+      max-height: 50%;
     }
 
     }
