@@ -1,97 +1,93 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<title>Cat-Clicker web-app</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<title>Cat-Clicker web-app</title>
 </head>
 
-<body class="main">
+<body class="container">
 
 	<header class="row">
 		<div class="buttons">
 			<a href="http://kfmahre.github.io/" class="icon home">home</a>
-			<a href="https://github.com/kfmahre" class="icon github">github</a>
-			<a href="https://www.linkedin.com/in/kfmahre" class="icon linkedin">linkedin</a>
 		</div>
 	</header>
 
-	<hr>
+	<div class="row container">
 
-	<div class="row">
-		<div class="dropdown cat-list">
-			<button type="button" class="btn btn-default btn-lg dropdown-toggle" id="catDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Select a Cat <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="catDropdown">
-				<li><a href="#" class="cat-sel text-center" id="baskets-sel">Baskets</a></li>
-				<li><a href="#" class="cat-sel text-center" id="pickles-sel">Pickles</a></li>
-				<li><a href="#" class="cat-sel text-center" id="sirLeo-sel">Sir Leo</a></li>
-				<li><a href="#" class="cat-sel text-center" id="bucketsJingles-sel">Buckets & Jingles</a></li>
-				<li><a href="#" class="cat-sel text-center" id="jarv-sel">Jarv</a></li>
-			</ul>
+	<div id="cat-window">
+
+		<hr>
+
+		<div class="row">
+			<div class="dropdown cat-list">
+				<button type="button" class="btn btn-info btn-lg dropdown-toggle" id="catDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Select a Cat <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+				</button>
+				<ul class="dropdown-menu text-center" aria-labelledby="catDropdown" id="cat-list"></ul>
+			</div>
 		</div>
+
+		<div class="row">
+			<div class="catbox container-fluid text-center">
+				<h3 class="cat-name" id="cat-name">Name</h3>
+				<div class="container-fluid">
+					<img class="catPic center-block img-circle" src="img" id="cat-img" alt="Cat Picture"/>
+				</div>
+				<form class="click-output" id="cat-count"></form>
+			</div>
+		</div>
+
+		<div class="row">
+			<form class="click-output text-center" id="total-click-count"></form>
+		</div>
+
+		<hr>
+
+	</div>
+
+	<div class="container">
+		<form class="form-horizontal" id="admin-form">
+		</form>
+	</div>
+
 	</div>
 
 	<div class="row">
-		<div class="allcats clearfix">
-
-			<div class="cat-box baskets-display">
-				<p class="cat-name text-center">Baskets</p>
-				<img class="catPic img-responsive img-circle" src="catpic.jpg" id="baskets-picture" alt="Cat Picture">
-				<form class="text-center">
-					<output class="click-output" id="baskets-count"></output>
-				</form>
-			</div>
-
-			<div class="cat-box pickles-display">
-				<p class="cat-name text-center">Pickles</p>
-				<img class="catPic img-responsive img-circle" src="catpic2.jpg" id="pickles-picture" alt="Cat Picture">
-				<form class="text-center">
-					<output class="click-output" id="pickles-count"></output>
-				</form>
-			</div>
-
-			<div class="cat-box sirLeo-display">
-				<p class="cat-name text-center">Sir Leo</p>
-				<img class="catPic img-responsive img-circle" src="catpic3.jpg" id="sirLeo-picture" alt="Cat Picture">
-				<form class="text-center">
-					<output class="click-output" id="sirLeo-count"></output>
-				</form>
-			</div>
-
-			<div class="cat-box bucketsJingles-display">
-				<p class="cat-name text-center">Buckets & Jingles</p>
-				<img class="catPic img-responsive img-circle" src="catpic4.jpg" id="bucketsJingles-picture" alt="Cat Picture">
-				<form class="text-center">
-					<output class="click-output" id="bucketsJingles-count"></output>
-				</form>
-			</div>
-
-			<div class="cat-box jarv-display">
-				<p class="cat-name text-center">Jarv</p>
-				<img class="catPic img-responsive img-circle" src="catpic5.jpg" id="jarv-picture" alt="Cat Picture">
-				<form class="text-center">
-					<output class="click-output" id="jarv-count"></output>
-				</form>
-			</div>
-
-		</div>
+		<form class="text-center form-inline">
+			<button type="button" class="btn btn-danger btn-lg" id="admin-button">Admin</button>
+		</form>
 	</div>
 
-	<hr>
 
-	<div class="row">
-		<div  >
-			<form class="text-center">
-				<output class="click-output" id="click-count"></output>
-			</form>
-		</div>
-	</div>
 
 <script src="js/jQuery.js" type="text/javascript"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
+
+<!-- total counter, integrated into app.js
+<script>
+var modelTotal = {
+		totalClickCount: 0
+};
+var storage = [];
+
+var clickElem = document.getElementById('total-click-count');
+clickElem.textContent = "";
+
+$('.catPic').click(function(e) {
+	modelTotal.totalClickCount++;
+	storage.push(totalClickCount++);
+	clickElem.textContent = "You've clicked a cat "+modelTotal.totalClickCount+" time(s)!";
+	console.log(modelTotal.totalClickCount);
+});
+</script>
+-->
+
+<!-- Original Spaghetti code
 
 <script>
 
@@ -216,6 +212,7 @@ $('#jarv-sel').click(function(e){
 });
 
 </script>
+-->
 
 </body>
 
